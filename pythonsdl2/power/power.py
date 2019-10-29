@@ -10,7 +10,7 @@ def getPowerInfo():
 	states = [
 		"UNKNOWN",
 		"ON_BATTERY",
-		"NO_BATTER",
+		"NO_BATTERY",
 		"CHARGING",
 		"CHARGED"
 	]
