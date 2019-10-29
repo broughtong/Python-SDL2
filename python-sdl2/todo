@@ -1,0 +1,5 @@
+sdl
+
+check subsystems can be closed correctly
+check they also can be ored together
+test inpuit
