@@ -6,19 +6,18 @@ ffibuilder = FFI()
 ffibuilder.cdef("""
 #define SDL_INIT_TIMER          0x00000001u
 #define SDL_INIT_AUDIO          0x00000010u
-#define SDL_INIT_VIDEO          0x00000020u  /**< SDL_INIT_VIDEO implies SDL_INIT_EVENTS */
-#define SDL_INIT_JOYSTICK	0x00000200u  /**< SDL_INIT_JOYSTICK implies SDL_INIT_EVENTS */
+#define SDL_INIT_VIDEO          0x00000020u
+#define SDL_INIT_JOYSTICK	0x00000200u
 #define SDL_INIT_HAPTIC         0x00001000u
-#define SDL_INIT_GAMECONTROLLER 0x00002000u  /**< SDL_INIT_GAMECONTROLLER implies SDL_INIT_JOYSTICK */
+#define SDL_INIT_GAMECONTROLLER 0x00002000u
 #define SDL_INIT_EVENTS         0x00004000u
-#define SDL_INIT_SENSOR         0x00008000u
-#define SDL_INIT_NOPARACHUTE    0x00100000u  /**< compatibility; this flag is ignored. */
+//#define SDL_INIT_SENSOR         0x00008000u
+#define SDL_INIT_NOPARACHUTE    0x00100000u
 #define SDL_INIT_EVERYTHING		0x0010f231u
 /*#define SDL_INIT_EVERYTHING ( \
                 SDL_INIT_TIMER | SDL_INIT_AUDIO | SDL_INIT_VIDEO | SDL_INIT_EVENTS | \
                 SDL_INIT_JOYSTICK | SDL_INIT_HAPTIC | SDL_INIT_GAMECONTROLLER | SDL_INIT_SENSOR \
             )*/
-
 
 int SDL_Init(uint32_t flags);
 int SDL_InitSubSystem(uint32_t flags);

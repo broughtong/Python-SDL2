@@ -34,7 +34,11 @@ typedef enum
 
 typedef struct SDL_Window SDL_Window;
 
-
+typedef struct SDL_Rect
+{
+    int x, y;
+    int w, h;
+} SDL_Rect;
 
 int SDL_GetNumVideoDrivers(void);
 const char *SDL_GetVideoDriver(int index);
@@ -120,13 +124,8 @@ int SDL_GL_SetSwapInterval(int interval);
 int SDL_GL_GetSwapInterval(void);
 void SDL_GL_SwapWindow(SDL_Window * window);
 void SDL_GL_DeleteContext(SDL_GLContext context);
-
 """)
 
-# set_source() gives the name of the python extension module to
-# produce, and some C source code as a string.  This C code needs
-# to make the declarated functions, types and globals available,
-# so it is often just the "#include".
 ffibuilder.set_source("_model",
 """
 #include "SDL2/SDL.h"
